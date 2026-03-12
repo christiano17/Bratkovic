@@ -160,6 +160,27 @@ nav.scrolled {
 }
 
 /* ═════════════════════════════════════
+   RESERVATION BANNER
+   ═════════════════════════════════════ */
+.reservation-banner {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.reservation-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.reservation-banner .btn-primary {
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+}
+
+/* ═════════════════════════════════════
    SECTIONS
    ═════════════════════════════════════ */
 section {

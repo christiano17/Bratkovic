@@ -69,6 +69,12 @@ function App() {
         <div className="scroll-hint">Pomaknite se navzdol</div>
       </section>
 
+      {/* RESERVATION BANNER */}
+      <section className="reservation-banner">
+        <p>Želite rezervacijo? Kliknite spodaj in skočite direktno na obrazec.</p>
+        <a href="#kontakt" className="btn-primary">Rezervirajte zdaj</a>
+      </section>
+
       {/* SERVICES */}
       <section id="storitve">
         <div className="section-header">
