@@ -31,15 +31,6 @@ function App() {
     };
   }, []);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.fs');
-    if (btn) {
-      btn.textContent = '✓ Sporočilo poslano!';
-      btn.style.cssText += 'background:#f59e0b;color:#0f172a';
-    }
-  }
-
   return (
     <>
       {/* NAV */}
@@ -49,137 +40,153 @@ function App() {
         </a>
         <ul className="nav-links">
           <li><a href="#storitve">Storitve</a></li>
-          <li><a href="#about">O nas</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
-        <a className="nav-cta" href="#kontakt">Rezerviraj termin</a>
       </nav>
 
       {/* HERO */}
       <section className="hero" id="domov">
         <div className="hero-content">
-          <div className="hero-tag">Zanesljivo · Strokovno · Pošteno</div>
-          <h1>Vaš avto v <em>dobrih rokah</em></h1>
-          <p className="hero-sub">Avtomehanične storitve z izkušnjami in srcem za vaše vozilo.</p>
-          <div className="hero-actions">
-            <a href="#kontakt" className="btn-primary">Rezerviraj termin</a>
-            <a href="#storitve" className="btn-ghost">Naše storitve</a>
-          </div>
+          <h1>Strokovna nega za vaše vozilo</h1>
+          <p className="hero-sub">
+            Pridružite se nam na poti do zanesljivega in dobro negovanega vozila! 
+            Z vsakim servisom zagotavljamo skrbno nego, udobje in nasmeh na obrazu 
+            vašega šoferja.
+          </p>
         </div>
-        <div className="scroll-hint">Pomaknite se navzdol</div>
-      </section>
-
-      {/* RESERVATION BANNER */}
-      <section className="reservation-banner">
-        <p>Želite rezervacijo? Kliknite spodaj in skočite direktno na obrazec.</p>
-        <a href="#kontakt" className="btn-primary">Rezervirajte zdaj</a>
       </section>
 
       {/* SERVICES */}
       <section id="storitve">
         <div className="section-header">
-          <div className="section-label">Kaj delamo</div>
-          <h2>Naše storitve</h2>
+          <h2>Storitve</h2>
         </div>
 
         <div className="services-grid">
-          {[
-            ['🔧', 'Avtomehanika', 'Diagnostika in popravila za vse vrste vozil.'],
-            ['⚙️', 'Redni servis', 'Menjava olja, filtrov in pregledi.'],
-            ['🛞', 'Pnevmatike', 'Menjava, uravnoteženje in hramba.'],
-            ['🔋', 'Elektrika', 'Diagnostika in popravila.'],
-            ['🛠️', 'Vzmetenje', 'Pregled in popravilo prožnih elementov.'],
-            ['🌡️', 'Klima', 'Servis klimatske naprave.'],
-          ].map(([icon, title, desc], idx) => (
-            <div className="card-wrap" key={idx}>
-              <div className="service-card slide-up-el">
-                <div className="si">{icon}</div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </div>
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Celotna nega</h3>
+              <p>
+                Vključuje pregled motorja, menjavo olja in filtrov, kontrolo zavor, 
+                diagnostiko, ter čiščenje. Poskrbimo za celostno urejenost in 
+                dobro počutje vašega vozila.
+              </p>
             </div>
-          ))}
+          </div>
+
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Redni servis</h3>
+              <p>
+                Temeljit servis z menjavo olja, filtrov in kontrolo ključnih sistemov 
+                za dolgo življenjsko dobo vašega vozila.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Diagnostika</h3>
+              <p>
+                Natančna elektronska diagnostika za hitro odkrivanje težav in 
+                preprečevanje večjih okvar vašega vozila.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Pnevmatike</h3>
+              <p>
+                Menjava pnevmatik, uravnoteženje in hramba za varno vožnjo skozi 
+                vse letne čase.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Vzmetenje in podvozje</h3>
+              <p>
+                Pregled in popravilo vzmetenja za optimalno udobje in 
+                varnost med vožnjo.
+              </p>
+            </div>
+          </div>
+
+          <div className="card-wrap">
+            <div className="service-card slide-up-el">
+              <h3>Klima servis</h3>
+              <p>
+                Servis klimatske naprave za svež zrak in prijetno temperaturo 
+                v vašem vozilu.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about">
-        <div className="about-visual" data-anim="from-left">
-          <img 
-            src="/images/2.png" 
-            alt="Automechanik"
-            className="about-image"
-          />
-        </div>
-        <div className="about-text" data-anim="from-right">
-          <div className="section-label">Kdo smo</div>
-          <h2>Mehanik, ki mu zaupate</h2>
-          <p>Sem Aleksander Bratkovič. Avtomehanika je moja strast, ne le delo. Z izkušnjami delam pošteno in transparentno.</p>
-          <p>Vsako vozilo obravnavam z maksimalno pozornostjo. Ni skritih stroškov, le kakovostna storitev, ki si jo zaslužite.</p>
+      {/* ABOUT / STORY */}
+      <section id="about" className="story-section">
+        <div className="story-content">
+          <p>
+            Vsaka zgodba ima svoj začetek, moja se je začela z ljubeznijo do avtomobilov 
+            – mojo strast, ki mi pomeni ves svet. Avtomobili niso bili le stroji, 
+            postali so moja obsesija in zvesta spremljevalka.
+          </p>
+          <p>
+            Potem pa sem spoznal svoje stranke, ki so imeli prav tako ljubezen do svojih 
+            vozil. In tako nas je zbližala skupna ljubezen do teh čudovitih strojev.
+          </p>
+          <p>
+            Čeprav je bilo na poti mnogo izzivov, je ta ljubezen do avtomobilov ter 
+            posebna vez, ki jo čutim do njih razlog, za odprtje delavnice.
+          </p>
+          <p>
+            V Avtomehaničnih storitvah Bratkovič smo predani temu, da vašim vozilom 
+            ponudimo najboljšo možno nego. Z dolgoletnimi izkušnjami skrbimo za to, 
+            da se vaše vozilo počuti varno in udobno.
+          </p>
         </div>
       </section>
 
       {/* CONTACT */}
       <section id="kontakt">
         <div className="section-header">
-          <div className="section-label">Stopite v stik</div>
-          <h2>Naročanje & kontakt</h2>
+          <h2>Kontakt</h2>
         </div>
 
-        <div className="contact-grid">
+        <div className="contact-content">
           <div className="contact-info">
             <div className="contact-item">
-              <span className="contact-icon">📍</span>
-              <div>
-                <h4>Naslov</h4>
-                <p>VAŠA ULICA 1, KRAJ, Slovenija</p>
-              </div>
+              <h4>📍 Naslov</h4>
+              <p>VAŠA ULICA 1<br/>KRAJ, Slovenija</p>
             </div>
+
             <div className="contact-item">
-              <span className="contact-icon">📞</span>
-              <div>
-                <h4>Telefon</h4>
-                <p><a href="tel:+386XXXXXXXX">+386 XX XXX XXX</a></p>
-              </div>
+              <h4>📞 Telefon</h4>
+              <p><a href="tel:+386XXXXXXXX">+386 XX XXX XXX</a></p>
             </div>
+
             <div className="contact-item">
-              <span className="contact-icon">✉️</span>
-              <div>
-                <h4>E-pošta</h4>
-                <p><a href="mailto:info@example.com">info@example.com</a></p>
-              </div>
+              <h4>✉️ E-pošta</h4>
+              <p><a href="mailto:info@bratkovic.si">info@bratkovic.si</a></p>
             </div>
+
             <div className="contact-item">
-              <span className="contact-icon">🕐</span>
-              <div>
-                <h4>Delovni čas</h4>
-                <p>Pon–Pet: 07:00–17:00<br/>Sab: Po dogovoru</p>
-              </div>
+              <h4>🕐 Delovni čas</h4>
+              <p>
+                Ponedeljek–Petek: 07:00–17:00<br/>
+                Sobota: Po dogovoru
+              </p>
             </div>
           </div>
-
-          <form className="cf" onSubmit={handleSubmit}>
-            <div className="fg">
-              <label htmlFor="name">Ime</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="fg">
-              <label htmlFor="email">E-pošta</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className="fg">
-              <label htmlFor="msg">Sporočilo</label>
-              <textarea id="msg" name="msg" required></textarea>
-            </div>
-            <button type="submit" className="fs">Pošlji</button>
-          </form>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer>
-        <div className="fl">Bratkovič Avtomehanične storitve</div>
-        <p>© 2026 Aleksander Bratkovič s.p. Vse pravice pridržane.</p>
+        <p>© 2026 Avtomehanične storitve Bratkovič. Vse pravice pridržane.</p>
       </footer>
     </>
   );
