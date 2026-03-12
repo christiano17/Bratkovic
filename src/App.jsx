@@ -66,6 +66,9 @@ function App() {
             <a href="#storitve" className="btn-ghost">Naše storitve</a>
           </div>
         </div>
+        <div className="hero-image">
+          <img src="/images/1.png" alt="Avtomehanika" />
+        </div>
         <div className="scroll-hint">Pomaknite se navzdol</div>
       </section>
 
@@ -100,7 +103,7 @@ function App() {
       <section id="about">
         <div className="about-visual" data-anim="from-left">
           <img 
-            src="https://images.unsplash.com/photo-1487278965515-bc4baf90690b?w=400&h=400&fit=crop&q=60" 
+            src="/images/2.png" 
             alt="Automechanik"
             className="about-image"
           />

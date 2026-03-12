@@ -117,9 +117,10 @@ nav.scrolled {
 .hero {
   padding-top: 7rem;
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
+  gap: 3rem;
   background: linear-gradient(135deg, var(--light) 0%, #e0e7ff 100%);
   position: relative;
   overflow: hidden;
@@ -135,6 +136,24 @@ nav.scrolled {
   background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
   border-radius: 50%;
 }
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(30, 64, 175, 0.2);
+  min-height: 400px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 
 .hero-bg {
   display: none;
@@ -631,6 +650,16 @@ footer {
    RESPONSIVE
    ═════════════════════════════════════ */
 @media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-image {
+    min-height: 300px;
+  }
+
   .nav-links {
     gap: 1rem;
     font-size: 0.85rem;
