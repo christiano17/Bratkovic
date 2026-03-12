@@ -21,3 +21,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Intersection Observer - Slide in from left animation
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Observe all elements that should slide in
+document.addEventListener('DOMContentLoaded', () => {
+    // Section headers
+    document.querySelectorAll('.section-header').forEach(el => observer.observe(el));
+    
+    // Service cards
+    document.querySelectorAll('.service-card').forEach(el => observer.observe(el));
+    
+    // Story paragraphs
+    document.querySelectorAll('.story-content p').forEach(el => observer.observe(el));
+    
+    // Contact items
+    document.querySelectorAll('.contact-item').forEach(el => observer.observe(el));
+});
