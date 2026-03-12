@@ -100,7 +100,7 @@ function App() {
       <section id="about">
         <div className="about-visual" data-anim="from-left">
           <img 
-            src="https://images.unsplash.com/photo-1487278965515-bc4baf90690b?w=500&h=500&fit=crop" 
+            src="https://images.unsplash.com/photo-1487278965515-bc4baf90690b?w=400&h=400&fit=crop&q=60" 
             alt="Automechanik"
             className="about-image"
           />
