@@ -1,0 +1,56 @@
+@media (hover: hover) {
+  body {
+    cursor: none;
+  }
+
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #e8611a;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: background 0.2s, width 0.15s, height 0.15s;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(232, 97, 26, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: border-color 0.2s, transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.cursor-dot.cursor-hover {
+  background: #ff7a33;
+  width: 12px;
+  height: 12px;
+}
+
+.cursor-ring.cursor-hover {
+  border-color: #ff7a33;
+}
+
+.cursor-dot.cursor-click {
+  transform: scale(0.8) !important;
+  background: #c4500f;
+}
+
+.cursor-ring.cursor-click {
+  border-color: #c4500f;
+}

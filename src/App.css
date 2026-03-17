@@ -300,6 +300,122 @@ footer {
 }
 
 /* ═════════════════════════════════════
+   NAV LINK UNDERLINE ANIMATION
+   ═════════════════════════════════════ */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ═════════════════════════════════════
+   BUTTON SHINE EFFECT
+   ═════════════════════════════════════ */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: left 0.45s ease;
+}
+
+.btn-shine:hover::after {
+  left: 140%;
+}
+
+/* ═════════════════════════════════════
+   WHATSAPP FLOATING BUTTON
+   ═════════════════════════════════════ */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 500;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  animation: waPulse 2.5s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+  animation: none;
+}
+
+@keyframes waPulse {
+  0%, 100% {
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+/* ═════════════════════════════════════
+   IMAGE HOVER ZOOM
+   ═════════════════════════════════════ */
+img {
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.04);
+}
+
+/* ═════════════════════════════════════
+   SERVICE CARD SHINE
+   ═════════════════════════════════════ */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.07), transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover::after {
+  left: 150%;
+}
+
+/* ═════════════════════════════════════
    RESPONSIVE
    ═════════════════════════════════════ */
 @media (max-width: 768px) {
